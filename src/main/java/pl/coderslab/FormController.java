@@ -8,15 +8,16 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Controller
+@RequestMapping("/first") //- powoduje dodanie przed wszystkimi adresami "/form" dodatkowego adresu "/first" - "/first/form"
 public class FormController {
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-    @GetMapping("/form")
+    @GetMapping("/anyForm")
     public String hello() {
-        return "form.jsp";
+        return "form";
     }
 
-    @PostMapping("/form")
+    @PostMapping("/anyForm")
     @ResponseBody
     public String taking(@RequestParam ("paramName") String paramName, @RequestParam ("paramDate") String paramDate){
         LocalDate formatDate = LocalDate.parse(paramDate, DATE_TIME_FORMATTER);

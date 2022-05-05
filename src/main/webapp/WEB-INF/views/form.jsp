@@ -11,7 +11,7 @@
     <title>Form</title>
 </head>
 <body>
-<form action="/form" method="post">
+<form method="post">
     Imię <input type="text" name="paramName">
     Data <input type="date" name="paramDate">
     <button type="submit">Wyślij</button>
